@@ -31,13 +31,13 @@ A production-ready YouTube & YouTube music playlist manager that  downloads and 
 ```bash
 
 # Install from PyPI (Recommended)
-pip install yt-ytmm-cli
+pip install yt-music-manager-cli
 
 # OR:
 
 # Clone the repository
-git clone https://github.com/sukarth/yt-ytmm-cli.git
-cd yt-ytmm-cli
+git clone https://github.com/sukarth/yt-music-manager-cli.git
+cd yt-music-manager-cli
 
 # and innstall the package
 pip install -e .
