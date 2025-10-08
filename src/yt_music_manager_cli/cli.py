@@ -463,17 +463,27 @@ def config(ctx):  # type: ignore[override]
 
 
 @main.command(name="add-playlist")
-@click.argument("url_or_id")
-@click.option("--name", help="Custom name for the playlist")
-def add_playlist(url_or_id, name):
-    """Add a YouTube playlist to track.
+@click.argument("url_or_ids", nargs=-1, required=True)
+@click.option("--name", help="Custom name for the playlist (only works with single playlist)")
+def add_playlist(url_or_ids, name):
+    """Add one or more YouTube playlists to track.
 
     URL_OR_ID can be:
     - Full YouTube playlist URL: https://www.youtube.com/playlist?list=PLxxx
     - Short URL: https://youtu.be/playlist?list=PLxxx
     - Just the playlist ID: PLxxx
+
+    You can specify multiple playlists: ytmm add-playlist PLxxx PLyyy PLzzz
+
+    Note: --name option only works when adding a single playlist.
     """
-    _add_playlist_sync(url_or_id, name)
+    if len(url_or_ids) > 1 and name is not None:
+        console.print("[red]Error: --name option can only be used with a single playlist[/red]")
+        console.print("When adding multiple playlists, each will use its default name from YouTube.")
+        return
+
+    for url_or_id in url_or_ids:
+        _add_playlist_sync(url_or_id, name)
 
 
 def _add_playlist_sync(url_or_id, name):
@@ -604,7 +614,7 @@ def _list_user_playlists_impl(simple):
 
         # Display playlists in a table
         table = Table(title=f"Your YouTube Playlists ({len(playlists)})")
-        table.add_column("ID", style="cyan", no_wrap=True, width=25)
+        table.add_column("ID", style="cyan", no_wrap=False)
         table.add_column("Title", style="bold", min_width=20)
         table.add_column("Videos", style="green", justify="right")
         table.add_column("Privacy", style="yellow")
@@ -829,19 +839,24 @@ def _remove_playlist_impl(playlist_identifier, keep_files):
 
 
 @main.command(name="remove-playlist")
-@click.argument("playlist_identifier")
+@click.argument("playlist_identifiers", nargs=-1, required=True)
 @click.option("--keep-files", is_flag=True, help="Keep downloaded files")
-def remove_playlist(playlist_identifier, keep_files):
-    """Remove a playlist from tracking."""
-    _remove_playlist_impl(playlist_identifier, keep_files)
+def remove_playlist(playlist_identifiers, keep_files):
+    """Remove one or more playlists from tracking.
+
+    You can specify multiple playlists: ytmm remove-playlist "Playlist 1" "Playlist 2" PLxxx
+    """
+    for playlist_identifier in playlist_identifiers:
+        _remove_playlist_impl(playlist_identifier, keep_files)
 
 
 @main.command(name="rp")
-@click.argument("playlist_identifier")
+@click.argument("playlist_identifiers", nargs=-1, required=True)
 @click.option("--keep-files", is_flag=True, help="Keep downloaded files")
-def remove_playlist_short(playlist_identifier, keep_files):
+def remove_playlist_short(playlist_identifiers, keep_files):
     """Alias for remove-playlist."""
-    _remove_playlist_impl(playlist_identifier, keep_files)
+    for playlist_identifier in playlist_identifiers:
+        _remove_playlist_impl(playlist_identifier, keep_files)
 
 
 @main.command()

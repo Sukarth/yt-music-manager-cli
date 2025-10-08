@@ -148,7 +148,7 @@ class AdvancedConfig(BaseModel):
     retry_delay: int = Field(5, description="Delay between retries in seconds")
     connection_timeout: int = Field(30, description="Network timeout in seconds")
     user_agent: str = Field(
-        "yt-music-manager-cli/1.0.1", description="User agent for requests"
+        "yt-music-manager-cli/1.0.2", description="User agent for requests"
     )
 
     @field_validator("retry_attempts")

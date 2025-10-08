@@ -50,7 +50,7 @@ pip install -e .
 
 ```bash
 # Add a public playlist and start downloading
-ytmm add-playlist "https://www.youtube.com/playlist?list=PLrAXtmRdnEQy6nuLMt9xrTwCcEcPvQv51"
+ytmm add-playlist "https://www.youtube.com/playlist?list=XXXXXX"
 
 # Sync all playlists
 ytmm sync
@@ -120,9 +120,13 @@ ytmm config set download.audio_quality '320'
 
 ```bash
 # Add a public playlist (works immediately, no setup needed)
-ytmm add-playlist "https://www.youtube.com/playlist?list=PLrAXtmRdnEQy6nuLMt9xrTwCcEcPvQv51"
+ytmm add-playlist "https://www.youtube.com/playlist?list=XXXXXX"
 
-# Add a playlist with a custom name
+# Add multiple playlists at once
+ytmm add-playlist PLxxx PLyyy PLzzz
+ytmm add-playlist "https://youtube.com/playlist?list=..." "https://youtube.com/playlist?list=..."
+
+# Add a playlist with a custom name (single playlist only)
 ytmm add-playlist "https://youtube.com/playlist?list=..." --name "My Favorites"
 
 # Sync all playlists
@@ -132,7 +136,7 @@ ytmm sync --all
 ytmm sync "My Playlist Name"
 
 # Add and sync immediately
-ytmm add-playlist "https://youtube.com/playlist?list=..." 
+ytmm add-playlist "https://youtube.com/playlist?list=..."
 # (Will ask if you want to sync right away)
 
 # Preview changes without downloading
@@ -189,11 +193,11 @@ ytmm auth remove creds
 | Command | Description |
 |---------|-------------|
 | `ytmm init` | Initialize configuration and setup |
-| `ytmm add-playlist <url>` | Add a YouTube playlist to track |
+| `ytmm add-playlist <url/id> [url/id...]` | Add one or more YouTube playlists to track |
 | `ytmm list-playlists` | Show all tracked playlists |
 | `ytmm sync [playlist]` | Sync playlists (download new, remove old) |
 | `ytmm sync --all` | Sync all tracked playlists |
-| `ytmm remove-playlist <name>` | Stop tracking a playlist |
+| `ytmm remove-playlist <name/id> [name/id...]` | Stop tracking one or more playlists |
 | `ytmm status` | Show sync status and statistics |
 | `ytmm config` | Show current configuration |
 | `ytmm auth status` | Show authentication status |
@@ -207,9 +211,14 @@ ytmm auth remove creds
 ### Examples
 
 ```bash
-# Add multiple playlists
+# Add multiple playlists at once
+ytmm add-playlist PLxxx PLyyy PLzzz
+ytmm add-playlist "https://www.youtube.com/playlist?list=PLrAXtmRdnEQy5lVX..." "https://www.youtube.com/watch?v=abc&list=PLxyz..."
+
+# Add single playlists
 ytmm add-playlist "https://www.youtube.com/playlist?list=PLrAXtmRdnEQy5lVX..."
-ytmm add-playlist "https://www.youtube.com/watch?v=abc&list=PLxyz..."
+
+# Note: --name option only works with single playlists
 
 # List all tracked playlists
 ytmm list-playlists --detailed
@@ -223,8 +232,8 @@ ytmm sync "Chill Music"
 # Check status and statistics
 ytmm status
 
-# Remove a playlist (keep files)
-ytmm remove-playlist "Old Playlist" --keep-files
+# Remove multiple playlists at once, but keep files
+ytmm remove-playlist "Old Playlist" "Another Playlist" PLxxx --keep-files
 ```
 
 ## ⚙️ Configuration
