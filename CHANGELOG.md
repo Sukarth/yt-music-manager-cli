@@ -10,11 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Ability to add and remove multiple playlists from tracking at the same time
 
+## [1.0.1] - 2025-01-08
+
 ### Fixed
 - Fixed missing bundled OAuth configuration data files in PyPI package distribution
 - Added package-data configuration to include data/oauth_client_bundled.json in builds
 
-## [Unreleased]
+## [1.0.0] - 2025-01-08
 
 ### Added
 - Initial release of YT Music Manager CLI (YTMM CLI)
