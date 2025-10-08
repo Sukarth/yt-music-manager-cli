@@ -42,7 +42,7 @@ def test_yt_music_manager_cli_logger_initialization(
     )
     manager.log_sync_summary("yt_music_manager_cli.sync", "Playlist", 1, 0, 0, 0, 1.5)
 
-    manager.print_banner("YT Music Manager CLI", "1.0.0")
+    manager.print_banner("YT Music Manager CLI", "1.0.1")
     manager.print_success("All good")
     manager.print_warning("Be careful")
     manager.print_error("Something failed")

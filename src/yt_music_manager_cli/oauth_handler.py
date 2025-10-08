@@ -147,7 +147,18 @@ class YouTubeOAuth:
 
             if not client_config.get("client_id"):
                 print("\n❌ OAuth client configuration is incomplete")
-                print(OAuthClientConfig.get_setup_instructions())
+
+                # Check if we're in auto_oauth mode and bundled config should be available
+                settings = get_settings()
+                if settings.youtube.auth_method == "auto_oauth":
+                    print("The bundled OAuth credentials are missing or corrupted.")
+                    print("This may indicate an installation issue.")
+                    print("\n🔧 Solutions:")
+                    print("1. Reinstall the package: pip install --force-reinstall yt-music-manager-cli")
+                    print("2. Switch to manual OAuth: ytmm auth mode manual_oauth")
+                    print("3. Report this issue if the problem persists")
+                else:
+                    print(OAuthClientConfig.get_setup_instructions())
                 return False
 
             # Validate client configuration security

@@ -3,7 +3,7 @@ YT Music Manager CLI (YTMM CLI) - YouTube Playlist Synchronizer
 A CLI tool for downloading and syncing YouTube & Youtube Music playlists. (YT Music Manager CLI)
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __author__ = "Sukarth Acharya"
 __email__ = "sukarthacharya@gmail.com"
 

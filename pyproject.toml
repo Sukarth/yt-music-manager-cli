@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yt-music-manager-cli"
-version = "1.0.0"
+version = "1.0.1"
 description = "A production-ready YouTube music playlist manager and synchronizer (YT Music Manager CLI)"
 authors = [{name = "Sukarth Acharya", email = "sukarthacharya@gmail.com"}]
 license = {text = "MIT"}
@@ -60,6 +60,9 @@ Homepage = "https://github.com/sukarth/yt-music-manager-cli"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"yt_music_manager_cli" = ["data/*.json"]
 
 [tool.black]
 line-length = 88
