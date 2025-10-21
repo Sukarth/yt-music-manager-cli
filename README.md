@@ -21,9 +21,14 @@ A production-ready YouTube & YouTube music playlist manager that  downloads and 
 
 ## 📋 Requirements
 
+### For CLI Usage
 - **Python 3.8+**
 - **Internet connection**
 - **Optional**: Google OAuth for private playlists
+
+### For GUI Application (Additional)
+- **Node.js 14+** (for running/building the GUI)
+- **npm** (comes with Node.js)
 
 ## 🚀 Quick Start
 
