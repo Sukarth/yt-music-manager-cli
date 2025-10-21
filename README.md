@@ -1,9 +1,42 @@
-# YT Music Manager CLI (YTMM CLI)
+# YT Music Manager
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A production-ready YouTube & YouTube music playlist manager that  downloads and keeps your music playlists in sync. **No API keys or authentication required** for public playlists! (YT Music Manager CLI)
+A production-ready YouTube & YouTube music playlist manager that downloads and keeps your music playlists in sync. Available as both a **modern desktop GUI** and **command-line tool**. **No API keys or authentication required** for public playlists!
+
+## 🎨 Choose Your Interface
+
+### 🖥️ Desktop GUI (Recommended)
+Beautiful, cross-platform desktop application with modern UI/UX.
+
+**Features:**
+- Visual playlist management
+- One-click sync operations
+- Real-time progress tracking
+- Easy settings configuration
+- Works on macOS, Windows, and Linux
+
+**Get Started:**
+```bash
+cd gui
+npm install
+npm start
+```
+
+📖 [GUI Quick Start Guide](gui/QUICKSTART.md) | [GUI Documentation](gui/README.md)
+
+### ⌨️ Command Line Interface
+Powerful CLI for automation and advanced users.
+
+**Get Started:**
+```bash
+pip install yt-music-manager-cli
+ytmm add-playlist "https://www.youtube.com/playlist?list=XXXXXX"
+ytmm sync
+```
+
+📖 [CLI Documentation](#-usage-guide) below
 
 ## 🎵 Features
 
@@ -429,7 +462,18 @@ If you find this project helpful, please consider:
 - **yt-dlp** - Excellent YouTube downloading library
 - **Rich** - Beautiful terminal output and progress bars
 - **Click** - Powerful command-line interface framework
+- **Electron** - Cross-platform desktop application framework
 - **Google** - YouTube Data API v3
+
+## 📚 Additional Resources
+
+- **[GUI Application](gui/)** - Desktop application with modern UI
+  - [Quick Start Guide](gui/QUICKSTART.md)
+  - [Build Instructions](gui/BUILD.md)
+  - [Screenshots](gui/SCREENSHOTS.md)
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+- **[Privacy Policy](PRIVACY_POLICY.md)** - Data handling and privacy information
+- **[Changelog](CHANGELOG.md)** - Version history and changes
 
 ---
 
