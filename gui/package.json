@@ -1,0 +1,44 @@
+{
+  "name": "yt-music-manager-gui",
+  "version": "1.0.2",
+  "description": "Modern GUI for YT Music Manager CLI - A YouTube music playlist manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": ["youtube", "music", "playlist", "manager", "electron", "gui"],
+  "author": "Sukarth Acharya",
+  "license": "MIT",
+  "build": {
+    "appId": "com.ytmusicmanager.app",
+    "productName": "YT Music Manager",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.music",
+      "target": ["dmg", "zip"]
+    },
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "linux": {
+      "target": ["AppImage", "deb", "rpm"],
+      "category": "Audio"
+    }
+  },
+  "devDependencies": {
+    "electron": "^38.3.0",
+    "electron-builder": "^26.0.12"
+  }
+}

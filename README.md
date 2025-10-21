@@ -15,6 +15,7 @@ A production-ready YouTube & YouTube music playlist manager that  downloads and 
 - **🔐 Flexible Authentication**: Public playlists (no auth), bundled OAuth (zero setup), or custom OAuth credentials
 - **🛡️ Production Ready**: Comprehensive error handling, logging, and recovery
 - **🖥️ Easy CLI**: Simple command-line interface with rich progress display
+- **🎨 Modern GUI**: Beautiful cross-platform desktop app (macOS, Windows, Linux)
 - **⚙️ Configurable**: Customizable download paths, quality settings, and more
 - **📊 Progress Tracking**: Real-time download progress and sync statistics
 
@@ -26,7 +27,32 @@ A production-ready YouTube & YouTube music playlist manager that  downloads and 
 
 ## 🚀 Quick Start
 
-### 1. Installation
+### Option 1: GUI Application (Recommended)
+
+For the best user experience, use the modern desktop GUI:
+
+1. **Install the CLI tool**:
+   ```bash
+   pip install yt-music-manager-cli
+   ```
+
+2. **Install and run the GUI**:
+   ```bash
+   cd gui
+   npm install
+   npm start
+   ```
+
+3. **Or download pre-built binaries** (coming soon):
+   - macOS: `.dmg` or `.zip`
+   - Windows: `.exe` installer or portable
+   - Linux: `.AppImage`, `.deb`, or `.rpm`
+
+See the [GUI README](gui/README.md) for more details.
+
+### Option 2: Command Line Interface
+
+#### 1. Installation
 
 ```bash
 
@@ -44,7 +70,7 @@ pip install -e .
 
 ```
 
-### 2. Start Using Immediately!
+#### 2. Start Using Immediately!
 
 **No configuration needed for public playlists:**
 
@@ -58,7 +84,7 @@ ytmm sync
 
 That's it! The app works out of the box with public YouTube playlists.
 
-### 3. Authentication and private playlists
+#### 3. Authentication and private playlists
 
 For private playlists or advanced features, you can set up authentication:
 
@@ -78,7 +104,7 @@ ytmm auth mode manual_oauth -y
 # Follow the interactive setup process
 ```
 
-### 4. Configuration
+#### 4. Configuration
 
 The app works with default settings, but you can customize everything:
 
@@ -116,7 +142,7 @@ ytmm config set download.audio_quality '320'
 # Please restart the application for changes to take effect.
 ```
 
-### 5. Add and Sync Playlists
+#### 5. Add and Sync Playlists
 
 ```bash
 # Add a public playlist (works immediately, no setup needed)
