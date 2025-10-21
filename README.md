@@ -1,9 +1,42 @@
-# YT Music Manager CLI (YTMM CLI)
+# YT Music Manager
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A production-ready YouTube & YouTube music playlist manager that  downloads and keeps your music playlists in sync. **No API keys or authentication required** for public playlists! (YT Music Manager CLI)
+A production-ready YouTube & YouTube music playlist manager that downloads and keeps your music playlists in sync. Available as both a **modern desktop GUI** and **command-line tool**. **No API keys or authentication required** for public playlists!
+
+## 🎨 Choose Your Interface
+
+### 🖥️ Desktop GUI (Recommended)
+Beautiful, cross-platform desktop application with modern UI/UX.
+
+**Features:**
+- Visual playlist management
+- One-click sync operations
+- Real-time progress tracking
+- Easy settings configuration
+- Works on macOS, Windows, and Linux
+
+**Get Started:**
+```bash
+cd gui
+npm install
+npm start
+```
+
+📖 [GUI Quick Start Guide](gui/QUICKSTART.md) | [GUI Documentation](gui/README.md)
+
+### ⌨️ Command Line Interface
+Powerful CLI for automation and advanced users.
+
+**Get Started:**
+```bash
+pip install yt-music-manager-cli
+ytmm add-playlist "https://www.youtube.com/playlist?list=XXXXXX"
+ytmm sync
+```
+
+📖 [CLI Documentation](#-usage-guide) below
 
 ## 🎵 Features
 
@@ -15,18 +48,49 @@ A production-ready YouTube & YouTube music playlist manager that  downloads and 
 - **🔐 Flexible Authentication**: Public playlists (no auth), bundled OAuth (zero setup), or custom OAuth credentials
 - **🛡️ Production Ready**: Comprehensive error handling, logging, and recovery
 - **🖥️ Easy CLI**: Simple command-line interface with rich progress display
+- **🎨 Modern GUI**: Beautiful cross-platform desktop app (macOS, Windows, Linux)
 - **⚙️ Configurable**: Customizable download paths, quality settings, and more
 - **📊 Progress Tracking**: Real-time download progress and sync statistics
 
 ## 📋 Requirements
 
+### For CLI Usage
 - **Python 3.8+**
 - **Internet connection**
 - **Optional**: Google OAuth for private playlists
 
+### For GUI Application (Additional)
+- **Node.js 14+** (for running/building the GUI)
+- **npm** (comes with Node.js)
+
 ## 🚀 Quick Start
 
-### 1. Installation
+### Option 1: GUI Application (Recommended)
+
+For the best user experience, use the modern desktop GUI:
+
+1. **Install the CLI tool**:
+   ```bash
+   pip install yt-music-manager-cli
+   ```
+
+2. **Install and run the GUI**:
+   ```bash
+   cd gui
+   npm install
+   npm start
+   ```
+
+3. **Or download pre-built binaries** (coming soon):
+   - macOS: `.dmg` or `.zip`
+   - Windows: `.exe` installer or portable
+   - Linux: `.AppImage`, `.deb`, or `.rpm`
+
+See the [GUI README](gui/README.md) for more details.
+
+### Option 2: Command Line Interface
+
+#### 1. Installation
 
 ```bash
 
@@ -44,7 +108,7 @@ pip install -e .
 
 ```
 
-### 2. Start Using Immediately!
+#### 2. Start Using Immediately!
 
 **No configuration needed for public playlists:**
 
@@ -58,7 +122,7 @@ ytmm sync
 
 That's it! The app works out of the box with public YouTube playlists.
 
-### 3. Authentication and private playlists
+#### 3. Authentication and private playlists
 
 For private playlists or advanced features, you can set up authentication:
 
@@ -78,7 +142,7 @@ ytmm auth mode manual_oauth -y
 # Follow the interactive setup process
 ```
 
-### 4. Configuration
+#### 4. Configuration
 
 The app works with default settings, but you can customize everything:
 
@@ -116,7 +180,7 @@ ytmm config set download.audio_quality '320'
 # Please restart the application for changes to take effect.
 ```
 
-### 5. Add and Sync Playlists
+#### 5. Add and Sync Playlists
 
 ```bash
 # Add a public playlist (works immediately, no setup needed)
@@ -398,7 +462,18 @@ If you find this project helpful, please consider:
 - **yt-dlp** - Excellent YouTube downloading library
 - **Rich** - Beautiful terminal output and progress bars
 - **Click** - Powerful command-line interface framework
+- **Electron** - Cross-platform desktop application framework
 - **Google** - YouTube Data API v3
+
+## 📚 Additional Resources
+
+- **[GUI Application](gui/)** - Desktop application with modern UI
+  - [Quick Start Guide](gui/QUICKSTART.md)
+  - [Build Instructions](gui/BUILD.md)
+  - [Screenshots](gui/SCREENSHOTS.md)
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+- **[Privacy Policy](PRIVACY_POLICY.md)** - Data handling and privacy information
+- **[Changelog](CHANGELOG.md)** - Version history and changes
 
 ---
 

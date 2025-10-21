@@ -1,0 +1,31 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="#1a1a2e"/>
+  <circle cx="256" cy="256" r="240" fill="url(#grad1)"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CC0000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- YouTube Play Button -->
+  <circle cx="256" cy="200" r="100" fill="white" opacity="0.95"/>
+  <polygon points="230,160 310,200 230,240" fill="#FF0000"/>
+  
+  <!-- Music Note -->
+  <g transform="translate(256, 320)">
+    <!-- Note stem -->
+    <rect x="30" y="-60" width="8" height="80" fill="white" rx="4"/>
+    <!-- Note head -->
+    <ellipse cx="20" cy="30" rx="25" ry="18" fill="white"/>
+    <ellipse cx="50" cy="25" rx="25" ry="18" fill="white"/>
+    <!-- Connecting line -->
+    <line x1="15" y1="15" x2="55" y2="10" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Border -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="white" stroke-width="4" opacity="0.1"/>
+</svg>
