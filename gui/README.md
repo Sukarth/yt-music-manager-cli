@@ -1,6 +1,21 @@
 # YT Music Manager - GUI Application
 
-Modern, cross-platform desktop application for managing YouTube music playlists.
+> 🎵 Beautiful, modern desktop application for managing YouTube music playlists
+
+[![Electron](https://img.shields.io/badge/Electron-38.3.0-47848F.svg?logo=electron)](https://www.electronjs.org/)
+[![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg)](https://github.com/Sukarth/yt-music-manager-cli)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+
+Modern, cross-platform desktop application for managing YouTube music playlists. Built with Electron, featuring a beautiful dark theme and intuitive interface.
+
+## ✨ Highlights
+
+- 🎨 **Modern Design** - Beautiful dark theme with smooth animations
+- 🖥️ **Cross-Platform** - Single codebase for macOS, Windows, and Linux  
+- ⚡ **Fast & Lightweight** - Vanilla JavaScript, no heavy frameworks
+- 🔒 **Secure** - Context isolation and secure IPC communication
+- 📦 **Portable** - Build standalone installers for easy distribution
+- 🎯 **User-Friendly** - Intuitive interface with real-time feedback
 
 ## Features
 
@@ -67,6 +82,31 @@ npm run build
 ```
 
 Built applications will be available in the `dist/` directory.
+
+## Project Structure
+
+```
+gui/
+├── main.js                 # Electron main process (244 lines)
+├── preload.js             # IPC bridge (25 lines)
+├── package.json           # Project configuration
+├── renderer/              # Frontend files
+│   ├── index.html        # UI structure (257 lines)
+│   ├── styles.css        # Modern styling (683 lines)
+│   └── app.js            # Application logic (479 lines)
+├── assets/               # Application assets
+│   ├── icon.svg         # App icon
+│   └── ICON_README.md   # Icon generation guide
+├── start.sh             # Unix launcher script
+├── start.bat            # Windows launcher script
+└── Documentation/
+    ├── README.md        # This file
+    ├── QUICKSTART.md    # User guide
+    ├── BUILD.md         # Build instructions
+    ├── SCREENSHOTS.md   # Visual documentation
+    ├── IMPLEMENTATION.md # Technical details
+    └── ARCHITECTURE.md  # System architecture
+```
 
 ## Usage
 
